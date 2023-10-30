@@ -30,7 +30,7 @@ const Cards = ({digit,tagline}) => {
   }
   return (
     <div className='flex flex-col w-full text-dark text-center mb-4'>
-      <span className='inline-block text-8xl font-bold' >
+      <span className='inline-block text-8xl font-bold md:!text-4xl' >
           <AnimatedNumbers value={digit} />+
         </span>
         <p className='text-base font-bold text-gray-400 capitalize'>{tagline}</p>

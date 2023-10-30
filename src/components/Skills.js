@@ -16,7 +16,7 @@ const Skills = () => {
   }
   return (
     <>
-      <h1 className='text-8xl font-bold text-center mt-24 md:text-6xl md:mt-32'>Skills</h1>
+      <h1 className='text-8xl font-bold text-center mt-24 md:text-6xl md:mt-16'>Skills</h1>
       <div className='relative flex flex-col items-center justify-center w-full h-screen bg-circularLight rounded-full lg:h-[80vh] sm:h-[60vh] xs:h-[50vh] lg:bg-circularLightLg md:bg-circularLightMd sm:bg-circularLightSm'>
         <motion.div className='absolute flex items-center justify-center p-8 text-light bg-dark rounded-full lg:p-6 md:p-4 xs:text-xs xs:p-2'
         whileHover={{scale:1.05}}

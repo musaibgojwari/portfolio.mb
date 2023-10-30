@@ -66,13 +66,13 @@ const MovingImg = ({img,title,link}) => {
     )
 }
 const Article = ({img,title,date,link}) => {
-   return <motion.li className='w-full flex relative p-4 py-6  items-center justify-between mb-4 rounded-xl bg-light text-dark border-2 border-dark border-solid first:mt-0 sm:flex-col sm:pl-0 xs:text-sm'
+   return <motion.li className='w-full flex relative p-4 py-6 items-center justify-between mb-4 rounded-xl bg-light text-dark border-2 border-dark border-solid first:mt-0 sm:flex-col sm:text-base sm:pl-0 xs:!text-sm md:flex-col sm:!p-2 '
    initial={{y:200}}
    whileInView={{y:0,transition:{duration:0.5,ease:"easeInOut"}}}
    viewport={{once:true}}
    >
         <MovingImg title={title} link={link} img={img} />
-          <span className='text-primary text-sm sm:self-start'>{date}</span>
+          <span className='text-primary text-sm md:self-start'>{date}</span>
     </motion.li>
 }
 
@@ -85,45 +85,42 @@ const Article = ({img,title,date,link}) => {
     <TransitionEffect />
     <main className='w-full mb-16 flex flex-col justify-center items-center overflow-hidden'>
         <Layout className='pt-16'>
-            <AnimatedText text="Words can change the world!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
+            <AnimatedText text="Words can change the world!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl sm:pt-0' />
             <ul className='grid grid-cols-2 gap-16 lg:gap-8 md:grid-cols-1 md:gap-y-16'>
                 <FeaturedArticle title="Build A Custom Pagination Component In Reactjs From Scratch" 
                 summary="Learn how to build a custom pagination component in ReactJS from scratch. 
                 Follow this step-by-step guide to integrate Pagination component in your ReactJS project.
-                9 min read"
+                " time="9 min read"
                 link="/"
                 img={article1}
                 />
                 <FeaturedArticle title="Build A Custom Pagination Component In Reactjs From Scratch" 
                 summary="Learn how to build a custom pagination component in ReactJS from scratch. 
                 Follow this step-by-step guide to integrate Pagination component in your ReactJS project.
-                9 min read"
+                " time="9 min read"
                 link="/"
                 img={article2}
                 />
             </ul>
 
-            <h2 className='font-xl font-semibold text-center'>Articles</h2>
+            <h2 className='text-xl font-semibold text-center md:text-sm'>Articles</h2>
             <ul>
-                <Article title="to the moon"
+                <Article title="Form Validation In Reactjs: Build A Reusable Custom Hook For Inputs And Error Handling"
                 link="/"
                 date="22 March,2022"
-                /><Article title="to the moon"
+                /><Article title="Silky Smooth Scrolling In Reactjs: A Step-By-Step Guide For React Developers"
                 link="/"
                 date="22 March,2022"
-                /><Article title="to the moon"
+                /><Article title="Creating An Efficient Modal Component In React Using Hooks And Portals"
                 link="/"
                 date="22 March,2022"
-                /><Article title="to the moon"
+                /><Article title="Build A Fabulous Todo List App With React, Redux And Framer-Motion"
                 link="/"
                 date="22 March,2022"
-                /><Article title="to the moon"
+                /><Article title="Redux Simplified: A Beginner's Guide For Web Developers"
                 link="/"
                 date="22 March,2022"
-                /><Article title="to the moon"
-                link="/"
-                date="22 March,2022"
-                /><Article title="to the moon"
+                /><Article title="What Is Higher Order Component (Hoc) In React?"
                 link="/"
                 date="22 March,2022"
                 />
@@ -134,4 +131,4 @@ const Article = ({img,title,date,link}) => {
   )
 }
 
-export default articles
+export default articl
