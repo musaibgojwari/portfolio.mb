@@ -1,130 +1,237 @@
-import AnimatedText from '@/components/AnimatedText'
-import Layout from '@/components/Layout'
-import Head from 'next/head'
-import Link from 'next/link'
-import React from 'react'
-import Image from 'next/image'
-import { GithubIcon } from '@/components/Icons'
+import AnimatedText from "@/components/AnimatedText";
+import { GithubIcon } from "@/components/Icons";
+import Layout from "@/components/Layout";
+import { motion } from "framer-motion";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+// import proj1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
+// import proj2 from "../../public/images/projects/nft-collection-website-cover-image.jpg";
+// import proj3 from "../../public/images/projects/fashion-studio-website.jpg";
+// import proj4 from "../../public/images/projects/portfolio-cover-image.jpg";
+// import proj5 from "../../public/images/projects/agency-website-cover-image.jpg";
+// import proj6 from "../../public/images/projects/devdreaming.jpg";
+import TransitionEffect from "@/components/TransitionEffect";
 import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg'
-import TransitionEffect from '@/components/TransitionEffect'
-const projects = () => {
 
-  const FeaturedProject = ({type,title,summary,img,link,github}) => {
-    return (
-        <article className='w-full flex items-center justify-between border-2 border-solid rounded-3xl bg-light border-dark shadow-2xl p-8 relative lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4'>
-          <div className='absolute bg-yellow-300 top-0 -right-3 -z-10 w-[102%] h-[103%] rounded-[2rem]' />
-          <Link className='w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full' href={link} target='_blank'>
-            <Image className='w-full h-auto' src={img} alt={title}></Image>
-          </Link>
-        <div className='w-1/2 flex flex-col items-start justify-between ml-4 lg:w-full lg:pl-0 lg:6'>
-          <span className='text-xl font-medium capitalize text-primary xs:text-base' >{type}</span>
-          <Link href={link} target='_blank' >
-            <h2 className='text-4xl w-full font-bold my-2 hover:underline sm:text-sm lg:text-2xl'>{title}</h2>
-          </Link>
-          <p className='my-2 font-medium text-dark sm:text-sm'>{summary}</p>
-        <div className='mt-2 flex items-center'> 
-          <Link className='w-8 md:w-6' href={github} target='_blank'> <GithubIcon /> </Link>
-          <Link href={link} target='_blank'
-          className='ml-4 p-2 px-6 bg-dark text-lg text-light rounded-lg font-semibold lg:w-full sm:px-4 sm:text-base'
-          >Visit Project</Link>
-        </div>
-        </div>
-        </article>
-    )
-  }
+const FramerImage = motion(Image);
 
-  const Project = ({title,type,img,link,github}) => {
-    return (
-      <article className='w-full flex flex-col items-center justify-center border-2 border-solid rounded-2xl bg-light border-dark p-6 relative xs:p-4'>
-        <Link className='w-full cursor-pointer overflow-hidden rounded-lg' href={link} target='_blank'>
-            <Image className='w-full h-auto' src={img} alt={title} priority 
-            sizes="(max-width: 768px) 100vw,
-            (max-width: 1200px) 50vw,
-            50vw"></Image>
+const FeaturedProject = ({ type, title, summary, img, link, github }) => {
+
+  return (
+    <article
+      className="relative flex w-full items-center  justify-between rounded-3xl rounded-br-2xl border
+border-solid border-dark bg-light p-12 shadow-2xl  dark:border-light dark:bg-dark  lg:flex-col 
+lg:p-8 xs:rounded-2xl  xs:rounded-br-3xl xs:p-4 
+    "
+    >
+      <div
+        className="absolute  top-0 -right-3 -z-10 h-[103%] w-[101%] rounded-[2.5rem] rounded-br-3xl bg-dark
+         dark:bg-light  xs:-right-2 xs:h-[102%] xs:w-[100%]
+        xs:rounded-[1.5rem] "
+      />
+      <Link
+        href={link}
+        target={"_blank"}
+        className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full"
+      >
+        <FramerImage
+          src={img}
+          className="h-auto w-full"
+          alt={title}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+          priority
+        />
+      </Link>
+      <div className="flex w-1/2 flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
+        <span className="text-xl font-medium text-primary dark:text-primaryDark xs:text-base">
+          {type}
+        </span>
+        <Link
+          href={link}
+          target={"_blank"}
+          className="underline-offset-2 hover:underline"
+        >
+          <h2 className="my-2 w-full text-left text-4xl font-bold lg:text-3xl xs:text-2xl">
+            {title}
+          </h2>
+        </Link>
+        <p className=" my-2 rounded-md font-medium text-dark dark:text-light sm:text-sm">
+          {summary}
+        </p>
+        <div className="mt-2 flex items-center">
+          <Link
+            href={github}
+            target={"_blank"}
+            className="w-10"
+            aria-label="Crypto Screener Application github link"
+          >
+            <GithubIcon />
           </Link>
-        <div className='w-full flex flex-col items-start justify-between mt-4 '>
-          <span className='text-xl font-medium capitalize text-primary lg:text-lg md:text-base' >{type}</span>
-          <Link href={link} target='_blank' >
-            <h2 className='text-3xl w-full font-bold my-2 hover:underline md:text-base'>{title}</h2>
+          <Link
+            href={link}
+            target={"_blank"}
+            className="ml-4 rounded-lg
+             bg-dark p-2 px-6 text-lg font-semibold text-light dark:bg-light dark:text-dark 
+             sm:px-4 sm:text-base
+            "
+            aria-label="Crypto Screener Application"
+          >
+            Visit Project
           </Link>
-        <div className='mt-2 w-full flex items-center justify-between'> 
-          <Link href={link} target='_blank'
-          className='text-lg text-dark rounded-lg font-semibold underline'
-          >Visit Project</Link>
-          <Link className='w-10' href={github} target='_blank'> <GithubIcon /> </Link>
         </div>
+      </div>
+    </article>
+  );
+};
+
+const Project = ({ title, type, img, link, github }) => {
+
+  return (
+    <article
+      className="relative flex w-full flex-col items-center justify-center rounded-2xl  rounded-br-2xl 
+      border  border-solid  border-dark bg-light p-6  shadow-2xl dark:border-light dark:bg-dark 
+      xs:p-4
+      "
+    >
+      <div
+        className="absolute  top-0 -right-3 -z-10 h-[103%] w-[102%] rounded-[2rem] rounded-br-3xl bg-dark
+         dark:bg-light  md:-right-2 md:w-[101%] xs:h-[102%]
+        xs:rounded-[1.5rem]  "
+      />
+
+      <Link
+        href={link}
+        target={"_blank"}
+        className="w-full cursor-pointer overflow-hidden rounded-lg"
+      >
+        <FramerImage
+          src={img}
+          alt={title}
+          className="h-auto w-full"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+          sizes="(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+        />
+      </Link>
+      <div className="mt-4 flex w-full flex-col items-start justify-between">
+        <span className="text-xl font-medium text-primary dark:text-primaryDark lg:text-lg md:text-base">
+          {type}
+        </span>
+
+        <Link
+          href={link}
+          target={"_blank"}
+          className="underline-offset-2 hover:underline"
+        >
+          <h2 className="my-2 w-full text-left text-3xl font-bold lg:text-2xl ">
+            {title}
+          </h2>
+        </Link>
+        <div className="flex w-full items-center  justify-between">
+          <Link
+            href={link}
+            target={"_blank"}
+            className="rounded text-lg
+            font-medium underline md:text-base
+            "
+            aria-label={title}
+          >
+            Visit
+          </Link>
         </div>
-      </article>
-    )
-  }
-  
+      </div>
+    </article>
+  );
+};
+
+export default function Projects() {
   return (
     <>
-    <Head>
-  <title>CodeBucks | Aboute Page</title>
-  <meta name='description' content='any description' />
-    </Head>
-    <TransitionEffect />
-    <main className='w-full flex flex-col items-center justify-center mb-16'>
-        <Layout className='pt-16'>
-          <AnimatedText text="imagination trumps knowledge!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
+      <Head>
+        <title>Modern Portfolio Built with Nextjs | Projects Page</title>
+        <meta
+          name="description"
+          content="Discover the latest webapp projects created by CodeBucks, a Next.js developer with 
+        expertise in React.js and full-stack development. Browse software engineering articles and tutorials for tips on creating your own portfolio."
+        />
+      </Head>
 
-          <div className='grid grid-cols-12 gap-16 p-12gap-y-32 border-light xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
-            <div className='col-span-12'>
-              <FeaturedProject 
+      <TransitionEffect />
+      <main
+        className={`mb-16  flex w-full flex-col items-center justify-center dark:text-light`}
+      >
+        <Layout className="pt-16">
+          <AnimatedText
+            text="Imagination Trumps Knowledge!"
+            className="mb-16 !text-8xl !leading-tight lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl"
+          />
+          <div className="grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0">
+            <div className="col-span-12">
+              <FeaturedProject
+                type="Featured Project"
                 title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. 
-                It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your 
-                local currency."
-                link="/"
-                github="/"
+                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
                 img={project1}
-                type="featured project"
+                link="https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css"
+                github="https://github.com/codebucks27/CryptoBucks-Final-Code"
               />
             </div>
-            <div className="col-span-6">
-            <Project 
-                title="Crypto Screener Application"
-                link="/"
-                github="/"
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                type="Website Template"
+                title="NFT collection Website"
                 img={project1}
-                type="featured project"
+                link="https://devdreaming.com/videos/create-nft-collection-website-reactjs"
+                github="https://github.com/codebucks27/The-Weirdos-NFT-Website-Starter-Code"
               />
             </div>
-            <div className="col-span-6">
-            <Project 
-                title="Crypto Screener Application"
-                link="/"
-                github="/"
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                type="Website"
+                title="Fashion Studio Website"
                 img={project1}
-                type="featured project"
+                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
+                github="https://github.com/codebucks27/wibe-studio"
               />
             </div>
-
-            <div className="col-span-6">
-            <Project 
-                title="Crypto Screener Application"
-                link="/"
-                github="/"
+            <div className="col-span-12">
+              <FeaturedProject
+                type="Portfolio Website"
+                title="React Portfolio Website"
+                summary="A professional portfolio website using React JS, Framer-motion, and Styled-components. It has smooth page transitions, cool background effects, unique design and it is mobile responsive."
                 img={project1}
-                type="featured project"
+                link="https://devdreaming.com/videos/build-stunning-portfolio-website-react-js-framer-motion"
+                github="https://github.com/codebucks27/react-portfolio-final"
               />
             </div>
-            <div className="col-span-6">
-            <Project 
-                title="Crypto Screener Application"
-                link="/"
-                github="/"
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                type="Website Template"
                 img={project1}
-                type="featured project"
+                title="Agency Website Template"
+                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
+                github="https://github.com/codebucks27/wibe-studio"
               />
             </div>
-              
+            <div className="col-span-6 sm:col-span-12">
+              <Project
+                type="Blog Website"
+                img={project1}
+                title="DevDreaming"
+                link="https://devdreaming.com"
+                github="https://github.com/codebucks27"
+              />
+            </div>
           </div>
         </Layout>
-    </main>
+      </main>
     </>
-  )
+  );
 }
-
-export default projects

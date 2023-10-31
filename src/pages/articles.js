@@ -131,4 +131,4 @@ const Article = ({img,title,date,link}) => {
   )
 }
 
-export default articl
+export default articles

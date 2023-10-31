@@ -154,7 +154,7 @@ export default function Navbar() {
             target='_blank'>
               <TwitterIcon />
             </motion.a>
-            <motion.a href="https://www.github.com" 
+            <motion.a href="https://github.com/musaibgojwari" 
             whileHover={{
               y:-2
             }}
@@ -162,10 +162,11 @@ export default function Navbar() {
               scale:0.9
             }}
             className='w-6'
+            link="https://github.com/musaibgojwari/"
             target='_blank'>
               <GithubIcon className="text-dark" />
             </motion.a>
-            <motion.a href="https://www.linkedin.com" 
+            <motion.a href="https://www.linkedin.com/in/musaib-bashir/" 
             whileHover={{
               y:-2
             }}
