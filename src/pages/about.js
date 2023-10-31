@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 import aboutPic from "../..//public/images/profile/developer-pic-2.jpg"
+import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Image from 'next/image'
 import Cards from '@/components/Cards'
 import Skills from '@/components/Skills'
