@@ -1,40 +1,62 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-const Skills = () => {
-  const Skill = ({x=0,y=0,name}) => {
+import { motion } from "framer-motion";
+import React, { useRef } from "react";
 
 
-    return <>
-            <motion.div className={`flex absolute items-center justify-center py-3 px-6 cursor-pointer shadow-dark text-light bg-dark rounded-full lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3 xs:bg-transparent xs:text-dark xs:font-bold`}
-            whileHover={{scale:1.05}}
-            initial={{x:0,y:0}}
-            whileInView={{x:x,y:y}}
-            transition={ {duration:1.5} }
-            viewport={{once:true}}
-            >{name}</motion.div>
-          </>
-  }
+const Skill = ({ name, x, y }) => {
+  const ref = useRef(null);
   return (
-    <>
-      <h1 className='text-8xl font-bold text-center mt-24 md:text-6xl md:mt-16'>Skills</h1>
-      <div className='relative flex flex-col items-center justify-center w-full h-screen bg-circularLight rounded-full lg:h-[80vh] sm:h-[60vh] xs:h-[50vh] lg:bg-circularLightLg md:bg-circularLightMd sm:bg-circularLightSm'>
-        <motion.div className='absolute flex items-center justify-center p-8 text-light bg-dark rounded-full lg:p-6 md:p-4 xs:text-xs xs:p-2'
-        whileHover={{scale:1.05}}
-        >
-          Web
-        </motion.div>
-        <Skill x="-20vw" y="2vw" name="HTML" />
-        <Skill x="-5vw" y="-10vw" name="CSS" />
-        <Skill x="20vw" y="6vw" name="JavaScript" />
-        <Skill x="0vw" y="12vw" name="ReactJS" />
-        <Skill x="-20vw" y="-15vw" name="NextJS" />
-        <Skill x="15vw" y="-12vw" name="GatsbyJS" />
-        <Skill x="32vw" y="-5vw" name="Web Design" />
-        <Skill x="0vw" y="-20vw" name="Figma" />
-        <Skill x="-25vw" y="18vw" name="Firebase" />
-      </div>
-    </>
-  )
-}
+    <motion.div
+      ref={ref}
+      whileHover={{scale:1.05}}
+      initial={{ x: 0, y: 0 }}
+      whileInView={{ x: x, y: y, transition: {duration: 1.5} }}
+      viewport={{ once: true }}
+      className="cursor-pointer w-max origin-center absolute 
+       font-semibold bg-dark text-light py-3 px-6 rounded-full dark:bg-light dark:text-dark
+       lg:py-2 lg:px-4 md:text-sm md:py-1.5 md:px-3  xs:bg-transparent xs:dark:bg-transparent xs:text-dark xs:dark:text-light xs:font-bold
+       "
+    >
+      {name}
+    </motion.div>
+  );
+};
 
-export default Skills
+const Skills = () => {
+  const ref = useRef(null);
+  return (
+<>
+      <h2 className="font-bold text-8xl mt-64 w-full text-center md:text-6xl md:mt-32 dark:text-light">
+        Skills
+      </h2> 
+    <div
+      ref={ref}
+      className="w-full h-[100vh] relative bg-circularLight dark:bg-circularDark  flex items-center justify-center 
+      mb-64 md:mb-32 rounded-full
+      lg:bg-circularLightLg lg:dark:bg-circularDarkLg md:bg-circularLightMd md:dark:bg-circularDarkMd 
+      sm:bg-circularLightSm sm:dark:bg-circularDarkSm lg:h-[80vh] sm:h-[60vh] xs:h-[50vh] 
+      "
+    >
+   
+        <motion.div whileHover={{scale:1.05}} className="cursor-pointer flex rounded-full font-semibold bg-dark text-light p-8 shadow-dark
+        dark:bg-light dark:text-dark lg:p-6 md:p-4 xs:text-xs xs:p-2
+        ">
+        Web
+      </motion.div>
+
+        <Skill name="HTML" x="-20vw" y="2vw" />
+
+          <Skill name="CSS" x="-5vw" y="-10vw" />
+          <Skill name="JavaScript" x="20vw" y="6vw" />
+          <Skill name="ReactJS" x="0vw" y="12vw" />
+          <Skill name="NextJS" x="-20vw" y="-15vw" />
+          <Skill name="GatsbyJS" x="15vw" y="-12vw" />
+          <Skill name="Github" x="-35vw" y="-5vw" />
+          <Skill name="Web Design" x="32vw" y="-5vw" />
+          <Skill name="Figma" x="0vw" y="-20vw" />
+          <Skill name="Firebase" x="-25vw" y="18vw" />
+          <Skill name="Tawilwind CSS" x="28vw" y="18vw" />
+    </div></>
+  );
+};
+
+export default Skills;

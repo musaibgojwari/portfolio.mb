@@ -33,6 +33,7 @@ export default function Navbar() {
         toggle();
         router.push(href)
       }
+
       return (
           <button href={href} className={`${className} relative group my-2`} onClick={handleClick} >
               {title}
@@ -43,15 +44,15 @@ export default function Navbar() {
   }
 
   return (
-    <header className='w-full px-24 py-8 flex justify-between items-center relative z-10 lg:px-16 md:px-12 sm:px-8'>
+    <header className='w-full px-24 py-8 flex justify-between items-center relative z-10 lg:px-16 md:px-12 sm:px-8 dark:bg-dark'>
       <button className='flex-col justify-center items-center hidden lg:flex' onClick={handleClick}>
-        <span className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm mb-2 ${isOpen ? `rotate-45 translate-y-1`: `-translate-y-0.5`} `}></span>
-        <span className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm mb-2 my-0.5 ${isOpen? 'opacity-0': `opacity-100`}`}></span>
-        <span className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm mb-2 ${isOpen ? `-rotate-45 -translate-y-1`: `translate-y-0.5`} `}></span>
+        <span className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm mb-2  ${isOpen ? `rotate-45 translate-y-1`: `-translate-y-0.5`} `}></span>
+        <span className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm mb-2  my-0.5 ${isOpen? 'opacity-0': `opacity-100`}`}></span>
+        <span className={`bg-dark dark:bg-light transition-all duration-300 ease-out block h-0.5 w-6 rounded-sm mb-2  ${isOpen ? `-rotate-45 -translate-y-1`: `translate-y-0.5`} `}></span>
       </button>
        
        <div className='w-full flex justify-between items-center lg:hidden' >
-       <navbar className='space-x-4 text-dark'>
+       <navbar className='space-x-4 text-dark dark:text-light'>
             <CustomLinks href="/" title="Home"></CustomLinks>
             <CustomLinks href="/about" title="About"></CustomLinks>
             <CustomLinks href="/projects" title="Project"></CustomLinks>
@@ -79,7 +80,7 @@ export default function Navbar() {
             }}
             className='w-6'
             target='_blank'>
-              <GithubIcon className="text-dark" />
+              <GithubIcon className="text-dark dark:text-light" />
             </motion.a>
             <motion.a href="https://www.linkedin.com" 
             whileHover={{
@@ -213,7 +214,7 @@ export default function Navbar() {
                 mode === "light" ? (
                 <SunIcon className={"fill-dark"}  /> ) :
                 (
-                <MoonIcon  className={"fill-dark"}/> )
+                <MoonIcon  className={"fill-light"}/> )
               }
             </button>
        </nav>

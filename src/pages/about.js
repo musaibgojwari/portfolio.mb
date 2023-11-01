@@ -47,8 +47,8 @@ const About = () => {
       <Layout className='pt-16'>
         <AnimatedText text="Passion Fuels Purpose!" className='mb-16 !text-8xl lg:!7xl sm:!text-6xl xs:!4xl sm:mb-8'/>
         <div className="grid grid-cols-8 w-full gap-16 sm:gap-8 text-dark">
-          <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:!col-span-8 md:order-2'>
-            <h2 className='text-lg font-bold text-dark/75 mb-4 uppercase'>Biography</h2>
+          <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:!col-span-8 md:order-2 dark:text-light'>
+            <h2 className='text-lg font-bold text-dark/75 mb-4 uppercase dark:text-light/75'>Biography</h2>
             <p className='font-medium'>- Hi, I'm Musaib Bashir, a web developer and UI/UX designer with a passion for creating beautiful, functional, 
               and user-centered digital experiences. With 4 years of experience in the field. I am always looking for 
               new and innovative ways to bring my clients' visions to life. </p>
@@ -75,7 +75,7 @@ const About = () => {
           <div className="col-span-2 flex flex-col items-end justify-between xl:col-span-8 xl:flex-row 
             xl:items-center md:order-3">
               <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
+                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl dark:text-light">
                   <AnimatedNumberFramerMotion value={40} />+
                 </span>
                 <h2 className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
@@ -85,7 +85,7 @@ const About = () => {
               </div>
 
               <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
+                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl dark:text-light">
                   <AnimatedNumberFramerMotion value={50} />+
                 </span>
                 <h2 className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
@@ -95,7 +95,7 @@ const About = () => {
               </div>
 
               <div className="flex flex-col items-end justify-center xl:items-center">
-                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl">
+                <span className="inline-block text-7xl font-bold md:text-6xl sm:text-5xl xs:text-4xl dark:text-light">
                   <AnimatedNumberFramerMotion value={4} />+
                 </span>
                 <h2 className="mb-4 text-xl font-medium capitalize text-dark/75 dark:text-light/75 
