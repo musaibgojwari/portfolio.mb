@@ -21,17 +21,23 @@ const useThemeSwitcher = () => {
                 } else {
                     document.documentElement.classList.remove("dark")
                 }
+                return check;
             } else {
-                let check = mediaQuery.matches ? "dark": "light";
-                setMode(check)
-
-                if(check === "dark") {
-                    document.documentElement.classList.add("dark")
+                setMode(mediaQuery.matches ? "dark" : "light");
+                window.localStorage.setItem(
+                  "theme",
+                  mediaQuery.matches ? "dark" : "light"
+                );
+                if (mediaQuery.matches) {
+                  document.documentElement.classList.add("dark");
                 } else {
-                    document.documentElement.classList.remove("dark")
+                  document.documentElement.classList.remove("dark");
                 }
-            }
-        }
+                return window.matchMedia(preferDarkQuery).matches ? "dark" : "light";
+              }
+        };
+
+        handleChange();
 
         mediaQuery.addEventListener("change",handleChange)
         return () => mediaQuery.removeEventListener("change",handleChange)
@@ -43,11 +49,11 @@ const useThemeSwitcher = () => {
     useEffect(() => {
       
         if(mode === "dark") {
-            window.localStorage.setItem("theme","dark")
             document.documentElement.classList.add("dark")
+            window.localStorage.setItem("theme","dark")
         } else {
-            window.localStorage.setItem("theme","light")
             document.documentElement.classList.remove("dark")
+            window.localStorage.setItem("theme","light")
         }
 
 

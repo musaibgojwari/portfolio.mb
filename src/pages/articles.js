@@ -14,7 +14,12 @@ const ImageFramer = motion(Image)
 
 const FeaturedArticle = ({title,summary,time,img,link}) => {
     return (
-        <li className='col-span-1'>
+        <li className="relative w-full p-4 col-span-1 bg-light border border-dark border-solid rounded-2xl 
+    dark:bg-dark dark:border-light">
+            <div
+        className="absolute  top-0 -right-3 w-[102%] h-[103%] rounded-[2rem]  rounded-br-3xl bg-dark 
+        -z-10  "
+      />
             <Link className='w-full cursor-pointer overflow-hidden rounded-lg' href={link} target='_blank'>
             <Image className=' w-full h-auto' src={img} alt={title} priority sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
@@ -66,7 +71,10 @@ const MovingImg = ({img,title,link}) => {
     )
 }
 const Article = ({img,title,date,link}) => {
-   return <motion.li className='w-full flex relative p-4 py-6 items-center justify-between mb-4 rounded-xl bg-light text-dark border-2 border-dark border-solid first:mt-0 sm:flex-col sm:text-base sm:pl-0 xs:!text-sm md:flex-col sm:!p-2 '
+   return <motion.li className="relative w-full p-4 py-6 my-2 rounded-xl flex sm:flex-col items-center justify-between 
+   bg-light text-dark first:mt-0 border border-solid border-dark
+   border-r-4 border-b-4 dark:bg-dark dark:border-light
+   "
    initial={{y:200}}
    whileInView={{y:0,transition:{duration:0.5,ease:"easeInOut"}}}
    viewport={{once:true}}

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Link from 'next/link'
 import Logo from './Logo'
 import { useRouter } from 'next/router'
 import { DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, PinterestIcon, SunIcon, TwitterIcon } from './Icons'
 import { motion } from 'framer-motion'
-import useThemeSwitcher from './hooks/useThemeSwitcher'
+import useThemeSwitcher from './Hooks/useThemeSwitcher';
 export default function Navbar() {
 
 
@@ -28,11 +28,11 @@ export default function Navbar() {
     }
 
     const CustomMobileLinks = ({href,title,className="",toggle}) => {
+      const router = useRef()
       const handleClick = () => {
         toggle();
         router.push(href)
       }
-      const router = useRouter();
       return (
           <button href={href} className={`${className} relative group my-2`} onClick={handleClick} >
               {title}
@@ -115,7 +115,7 @@ export default function Navbar() {
               <DribbbleIcon />
             </motion.a>
             
-            <button  onclick={ () => 
+            <button  onClick={ () => 
                  setMode(mode === "light" ? "dark" : "light")
                 }
                 className='ml-2 p-1 flex items-center justify-center rounded-full'
@@ -200,17 +200,20 @@ export default function Navbar() {
               <DribbbleIcon />
             </motion.a>
             
-            <button  onclick={ () => 
+            <button  onClick={ () => 
                  setMode(mode === "light" ? "dark" : "light")
                 }
-                className='ml-2 p-1 flex items-center justify-center rounded-full'
+                className={`w-6 h-6 ease ml-3 flex items-center justify-center rounded-full p-1  
+                ${mode === "light" ? "bg-dark  text-light" : "bg-light  text-dark"}
+                `}
+                aria-label='theme-switcher'
                 >
-                  {console.log("mode=>",mode)}
               {
                 
-                mode === "dark" ?
-                <SunIcon className={"fill-dark"} /> :
-                <MoonIcon  className={"fill-dark"}/>
+                mode === "light" ? (
+                <SunIcon className={"fill-dark"}  /> ) :
+                (
+                <MoonIcon  className={"fill-dark"}/> )
               }
             </button>
        </nav>
