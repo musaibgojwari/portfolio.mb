@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react'
 import Head from 'next/head'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
-import aboutPic from "../..//public/images/profile/developer-pic-2.jpg"
+import profile1 from "../..//public/images/profile/musaibu.jpg"
+import profile2 from "../..//public/images/profile/musaibuu.jpg"
 import { useInView, useMotionValue, useSpring } from "framer-motion";
 import Image from 'next/image'
-import Cards from '@/components/Cards'
 import Skills from '@/components/Skills'
 import Experience from '@/components/Experience'
 import TransitionEffect from '@/components/TransitionEffect'
@@ -49,9 +49,9 @@ const About = () => {
         <div className="grid grid-cols-8 w-full gap-16 sm:gap-8 text-dark">
           <div className='col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:!col-span-8 md:order-2 dark:text-light'>
             <h2 className='text-lg font-bold text-dark/75 mb-4 uppercase dark:text-light/75'>Biography</h2>
-            <p className='font-medium'>- Hi, I'm Musaib Bashir, a web developer and UI/UX designer with a passion for creating beautiful, functional, 
-              and user-centered digital experiences. With 4 years of experience in the field. I am always looking for 
-              new and innovative ways to bring my clients' visions to life. </p>
+            <p className='font-medium'>- Hi, I'm Musaib Bashir, a web developer with a passion for creating beautiful, functional, 
+              and user-centered digital experiences. I am always looking for 
+              new and innovative ways to bring my client's visions to life. </p>
 
             <p className='font-medium my-4'>I believe that design is about more than just making things look pretty – it's about solving problems and creating intuitive, enjoyable experiences for users.</p>
             <p className='font-medium'>
@@ -66,7 +66,7 @@ const About = () => {
                 bg-dark
         dark:bg-light  "
               />
-            <Image className='w-full h-auto rounded-2xl'  src={aboutPic} alt="mypic" priority 
+            <Image className='w-full h-auto rounded-2xl'  src={profile1} alt="mypic" priority 
             sizes="(max-width: 768px) 100vw,
             (max-width: 1200px) 50vw,
             33vw"></Image>

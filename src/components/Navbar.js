@@ -60,7 +60,7 @@ export default function Navbar() {
        </navbar>
 
        <nav className='flex justify-center items-center flex-wrap space-x-4'>
-            <motion.a href="https://www.twitter.com" 
+            {/* <motion.a href="https://www.twitter.com" 
             whileHover={{
               y:-2
             }}
@@ -70,8 +70,8 @@ export default function Navbar() {
             className='w-6'
             target='_blank'>
               <TwitterIcon />
-            </motion.a>
-            <motion.a href="https://www.github.com" 
+            </motion.a> */}
+            <motion.a href="https://github.com/musaibgojwari" 
             whileHover={{
               y:-2
             }}
@@ -82,7 +82,7 @@ export default function Navbar() {
             target='_blank'>
               <GithubIcon className="text-dark dark:text-light" />
             </motion.a>
-            <motion.a href="https://www.linkedin.com" 
+            <motion.a href="https://www.linkedin.com/in/musaib-bashir/" 
             whileHover={{
               y:-2
             }}
@@ -93,7 +93,7 @@ export default function Navbar() {
             target='_blank'>
               <LinkedInIcon />
             </motion.a>
-            <motion.a href="https://www.pinterest.com" 
+            {/* <motion.a href="https://www.pinterest.com" 
             whileHover={{
               y:-2
             }}
@@ -103,8 +103,8 @@ export default function Navbar() {
             className='w-6'
             target='_blank'>
               <PinterestIcon />
-            </motion.a>
-            <motion.a href="https://www.dribble.com" 
+            </motion.a> */}
+            {/* <motion.a href="https://www.dribble.com" 
             whileHover={{
               y:-2
             }}
@@ -114,7 +114,7 @@ export default function Navbar() {
             className='w-6'
             target='_blank'>
               <DribbbleIcon />
-            </motion.a>
+            </motion.a> */}
             
             <button  onClick={ () => 
                  setMode(mode === "light" ? "dark" : "light")
@@ -214,7 +214,7 @@ export default function Navbar() {
                 mode === "light" ? (
                 <SunIcon className={"fill-dark"}  /> ) :
                 (
-                <MoonIcon  className={"fill-light"}/> )
+                <MoonIcon  className={"fill-dark"}/> )
               }
             </button>
        </nav>

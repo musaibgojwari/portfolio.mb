@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-// import proj1 from "../../public/images/projects/crypto-screener-cover-image.jpg";
-// import proj2 from "../../public/images/projects/nft-collection-website-cover-image.jpg";
-// import proj3 from "../../public/images/projects/fashion-studio-website.jpg";
-// import proj4 from "../../public/images/projects/portfolio-cover-image.jpg";
+import project1 from "../../public/images/projects/rps.png";
+import project2 from "../../public/images/projects/apple-vr.png";
+import project3 from "../../public/images/projects/magma.png";
+import project4 from "../../public/images/projects/iNotebook.png";
+import project5 from "../../public/images/projects/portfolio.png";
 // import proj5 from "../../public/images/projects/agency-website-cover-image.jpg";
 // import proj6 from "../../public/images/projects/devdreaming.jpg";
 import TransitionEffect from "@/components/TransitionEffect";
-import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg'
 
 const FramerImage = motion(Image);
 
@@ -165,7 +165,7 @@ export default function Projects() {
 
       <TransitionEffect />
       <main
-        className={`mb-16  flex w-full flex-col items-center justify-center dark:text-light`}
+        className={`flex w-full flex-col items-center justify-center dark:text-light`}
       >
         <Layout className="pt-16">
           <AnimatedText
@@ -176,29 +176,29 @@ export default function Projects() {
             <div className="col-span-12">
               <FeaturedProject
                 type="Featured Project"
-                title="Crypto Screener Application"
-                summary="A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
+                title="Rock Paper Scissor Game"
+                summary="Engage in Epic Battles with Our Rock, Paper, Scissors Game! A Fun React-ive Experience with Tailwind CSS and Thrilling Gameplay. Choose Your Weapon and Let the Games Begin! 🪨📜✂️ #ReactGame #TailwindCSS #RockPaperScissors"
                 img={project1}
-                link="https://devdreaming.com/videos/build-crypto-screener-app-with-react-tailwind-css"
-                github="https://github.com/codebucks27/CryptoBucks-Final-Code"
+                link="/"
+                github="https://github.com/musaibgojwari/rps_game"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Website Template"
-                title="NFT collection Website"
-                img={project1}
-                link="https://devdreaming.com/videos/create-nft-collection-website-reactjs"
-                github="https://github.com/codebucks27/The-Weirdos-NFT-Website-Starter-Code"
+                type="clone"
+                title="Apple VR Clone"
+                img={project2}
+                link="/"
+                github="https://github.com/musaibgojwari/Apple-VR-Clone"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Website"
-                title="Fashion Studio Website"
-                img={project1}
-                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
-                github="https://github.com/codebucks27/wibe-studio"
+                type="api"
+                title="iNoteBook"
+                img={project4}
+                link="/"
+                github="https://github.com/musaibgojwari/iNoteBook"
               />
             </div>
             <div className="col-span-12">
@@ -206,28 +206,21 @@ export default function Projects() {
                 type="Portfolio Website"
                 title="React Portfolio Website"
                 summary="A professional portfolio website using React JS, Framer-motion, and Styled-components. It has smooth page transitions, cool background effects, unique design and it is mobile responsive."
-                img={project1}
-                link="https://devdreaming.com/videos/build-stunning-portfolio-website-react-js-framer-motion"
-                github="https://github.com/codebucks27/react-portfolio-final"
+                img={project5}
+                link="/"
+                github="https://github.com/musaibgojwari/portfolio.mb"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
               <Project
-                type="Website Template"
-                img={project1}
-                title="Agency Website Template"
-                link="https://devdreaming.com/videos/build-stunning-fashion-studio-website-with-reactJS-locomotive-scroll-gsap"
-                github="https://github.com/codebucks27/wibe-studio"
+                type="clone"
+                img={project3}
+                title="this Magma Clone"
+                link="/"
+                github="https://github.com/musaibgojwari/thismagma-Clone"
               />
             </div>
             <div className="col-span-6 sm:col-span-12">
-              <Project
-                type="Blog Website"
-                img={project1}
-                title="DevDreaming"
-                link="https://devdreaming.com"
-                github="https://github.com/codebucks27"
-              />
             </div>
           </div>
         </Layout>
